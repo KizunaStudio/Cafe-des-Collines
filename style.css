@@ -1,0 +1,372 @@
+/* === style.css === */
+
+/* --- Palette --- */
+:root {
+  --brun-fonce: #2b1b12;
+  --cuivre: #b87333;
+  --beige-clair: #f7e4c8;
+  --texte-clair: #faf3e0;
+  --blanc: #ffffff;
+}
+
+/* --- Réinitialisation --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--texte-clair);
+  background-color: var(--brun-fonce);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--cuivre);
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texte-clair);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--cuivre);
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--texte-clair);
+  cursor: pointer;
+}
+
+/* === HERO === */
+.hero {
+  height: 100vh;
+  background: url('images/hero-cafe.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 8%;
+  box-shadow: 0 4px 10px rgba(164, 108, 44, 0.688);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(43, 27, 18, 0.65);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--cuivre);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--texte-clair);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: var(--cuivre);
+  color: var(--blanc);
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--beige-clair);
+  color: var(--brun-fonce);
+}
+
+/* === NOS CAFÉS === */
+.cafes {
+  background-color: var(--brun-fonce);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cafes h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--cuivre);
+  margin-bottom: 3rem;
+}
+
+.coffee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.coffee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.coffee-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.coffee-item img {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.coffee-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.coffee-text h3 {
+  color: var(--cuivre);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.coffee-text p {
+  color: var(--texte-clair);
+}
+
+/* === SAVOIR-FAIRE === */
+.atelier {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background-color: var(--beige-clair);
+  color: var(--brun-fonce);
+}
+
+.atelier-image img {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  object-fit: cover;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.atelier-text {
+  max-width: 600px;
+  padding: 4rem;
+}
+
+.atelier-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--brun-fonce);
+  margin-bottom: 1rem;
+}
+
+.atelier-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #3a2c22;
+}
+
+/* === GALERIE === */
+.galerie {
+  padding: 5rem 2rem;
+  background-color: var(--brun-fonce);
+  text-align: center;
+}
+
+.galerie h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--cuivre);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  filter: brightness(110%);
+}
+
+/* === CONTACT === */
+.contact {
+  background-color: #1c120c;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--cuivre);
+  margin-bottom: 2rem;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+  color: var(--texte-clair);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--beige-clair);
+  color: var(--brun-fonce);
+}
+
+.contact button {
+  background-color: var(--cuivre);
+  color: var(--blanc);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background-color: var(--beige-clair);
+  color: var(--brun-fonce);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #0e0704;
+  color: var(--texte-clair);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .coffee-item,
+  .coffee-item.reverse {
+    flex-direction: column;
+  }
+
+  .atelier {
+    flex-direction: column;
+  }
+
+  .atelier-image img {
+    max-width: 100%;
+  }
+
+  .atelier-text {
+    padding: 2rem;
+  }
+}
+
+
+/* --- Animations de fade-in au scroll --- */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
