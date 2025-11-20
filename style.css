@@ -370,3 +370,74 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* === FIX RESPONSIVE SUPPLÉMENTAIRE — CAFÉ DES COLLINES === */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Empêche tout dépassement d'image ou de texte */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ajuste le texte du hero */
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  padding: 0 1rem;
+}
+
+/* Évite les marges qui décalent tout */
+section, div, header, footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Bouton centré sur mobile */
+.btn-primary {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+/* Hero mieux centré sur petits écrans */
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    background-position: center;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .coffee-item img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .coffee-text {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .atelier-text {
+    padding: 2rem 1.5rem;
+  }
+
+  .gallery-grid img {
+    height: auto;
+
+
