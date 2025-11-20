@@ -312,185 +312,80 @@ footer {
   font-size: 0.9rem;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-  }
+/* === FIX RESPONSIVE DÉFINITIF — CAFÉ DES COLLINES === */
 
-  .nav-links.active {
-    display: flex;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .hero {
-    justify-content: center;
-    text-align: center;
-    padding: 0 2rem;
-  }
-
-  .coffee-item,
-  .coffee-item.reverse {
-    flex-direction: column;
-  }
-
-  .atelier {
-    flex-direction: column;
-  }
-
-  .atelier-image img {
-    max-width: 100%;
-  }
-
-  .atelier-text {
-    padding: 2rem;
-  }
-}
-
-
-/* --- Animations de fade-in au scroll --- */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === FIX RESPONSIVE SUPPLÉMENTAIRE — CAFÉ DES COLLINES === */
 
 html, body {
-  width: 100%;
-  overflow-x: hidden;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden;
 }
 
-/* Empêche tout dépassement d'image ou de texte */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Ajuste le texte du hero */
-.hero h1 {
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  padding: 0 1rem;
-}
-
-/* Évite les marges qui décalent tout */
-section, div, header, footer {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Bouton centré sur mobile */
-.btn-primary {
-  display: inline-block;
-  margin: 0 auto;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-}
-
-/* Hero mieux centré sur petits écrans */
-@media (max-width: 768px) {
-  .hero {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 1.5rem;
-    background-position: center;
-  }
-
-  .hero-content {
-    max-width: 90%;
-  }
-
-  .coffee-item img {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .coffee-text {
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .atelier-text {
-    padding: 2rem 1.5rem;
-  }
-
-  .gallery-grid img {
-    height: auto;
-/* === FIX FINAL RESPONSIVE — SUPPRESSION DU DÉBORDEMENT === */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 * {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
-/* Corrige le décalage du texte sur mobile */
-.coffee-item,
-.coffee-text,
+
+/* Empêche tout débordement horizontal */
+.cafes, .coffee-list, .coffee-item, .coffee-text {
+overflow-x: hidden;
+width: 100%;
+max-width: 100%;
+margin: 0 auto;
+}
+
+
+/* Corrige les images trop larges */
 .coffee-item img {
-  max-width: 100%;
-  overflow-x: hidden;
+width: 100%;
+max-width: 340px;
+height: auto;
+display: block;
+margin: 0 auto;
+border-radius: 10px;
+box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
-/* Forcer les blocs à ne jamais dépasser l’écran */
-section, div, img {
-  max-width: 100%;
-}
 
-/* Ajuster les titres longs */
+/* Ajuste le texte sur mobile */
 .coffee-text h3 {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-align: center;
-  font-size: clamp(1.2rem, 5vw, 1.5rem);
+font-size: clamp(1.2rem, 4vw, 1.5rem);
+text-align: center;
+word-wrap: break-word;
+overflow-wrap: break-word;
 }
+
 
 .coffee-text p {
-  text-align: center;
-  padding: 0 1rem;
+font-size: clamp(0.9rem, 3vw, 1rem);
+text-align: center;
+padding: 0 1rem;
+line-height: 1.5;
 }
 
-/* Ajuster le centrage global sur petits écrans */
+
+/* Pour éviter tout débordement du conteneur */
+section, div, header, footer {
+max-width: 100%;
+overflow-x: hidden;
+}
+
+
 @media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-  .cafes {
-    padding: 3rem 1rem;
-  }
-  .coffee-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
+.coffee-item {
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1.5rem;
 }
 
+
+.coffee-text {
+padding: 0 1rem;
+max-width: 90%;
+margin: 0 auto;
+}
+}
 
 
