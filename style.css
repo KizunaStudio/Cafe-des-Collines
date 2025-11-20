@@ -439,5 +439,58 @@ section, div, header, footer {
 
   .gallery-grid img {
     height: auto;
+/* === FIX FINAL RESPONSIVE — SUPPRESSION DU DÉBORDEMENT === */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Corrige le décalage du texte sur mobile */
+.coffee-item,
+.coffee-text,
+.coffee-item img {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Forcer les blocs à ne jamais dépasser l’écran */
+section, div, img {
+  max-width: 100%;
+}
+
+/* Ajuster les titres longs */
+.coffee-text h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+}
+
+.coffee-text p {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Ajuster le centrage global sur petits écrans */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  .cafes {
+    padding: 3rem 1rem;
+  }
+  .coffee-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 
 
