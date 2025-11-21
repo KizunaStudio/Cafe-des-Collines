@@ -373,18 +373,18 @@ overflow-x: hidden;
 
 
 @media (max-width: 768px) {
-.coffee-item {
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 1.5rem;
-}
+  .coffee-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 
-
-.coffee-text {
-padding: 0 1rem;
-max-width: 90%;
-margin: 0 auto;
+  .coffee-text {
+    padding: 0 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 }
 
 /* === FIX DÉFINITIF DU MENU HAMBURGER (100% FONCTIONNEL) === */
@@ -421,7 +421,7 @@ margin: 0 auto;
   }
 
   .nav-links.active {
-    max-height: 500px; /* Plus grand pour s’ouvrir complètement */
+    max-height: 500px; /* ouverture complète */
     opacity: 1;
     padding: 1.5rem 0;
   }
