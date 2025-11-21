@@ -386,6 +386,38 @@ padding: 0 1rem;
 max-width: 90%;
 margin: 0 auto;
 }
+
+  /* === FIX DU BOUTON HAMBURGER === */
+@media (max-width: 768px) {
+  .burger {
+    display: block !important;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    z-index: 9999;
+    font-size: 2rem;
+    color: var(--cuivre);
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
+
+
 
 
