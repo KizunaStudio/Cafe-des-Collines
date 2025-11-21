@@ -436,6 +436,14 @@ overflow-x: hidden;
   }
 }
 
+/* === FIX : menu hamburger visible au-dessus du hero === */
+header, .navbar, .nav-links.active {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+
+
 
 
 
