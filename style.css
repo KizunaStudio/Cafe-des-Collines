@@ -316,37 +316,50 @@ footer {
 
 
 /* === MENU MOBILE === */
+/* === MENU MOBILE FIX === */
 .nav-links {
   display: none;
   flex-direction: column;
+  position: absolute; /* en dehors du flux de la navbar */
+  top: 100%; /* commence juste en dessous de la navbar */
+  left: 0;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.95);
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 80%; /* élargit le menu sur mobile */
-  padding: 1.5rem 0;
-  border-radius: 0 0 0 10px;
-  z-index: 9999; /* assure qu’il passe devant tout */
   text-align: center;
-}
-
-.nav-links li {
-  padding: 0.8rem 0;
-}
-
-.nav-links a {
-  font-size: 1.2rem;
-  color: #fff;
-  text-decoration: none;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999; /* passe au-dessus du contenu */
 }
 
 .nav-links.active {
   display: flex;
+  animation: slideDown 0.4s ease forwards;
 }
 
-* {
-box-sizing: border-box;
+/* animation d’ouverture fluide */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.nav-links a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0.8rem 0;
+}
+
+.burger {
+  z-index: 10000; /* le burger reste cliquable par-dessus */
+}
+
 
 
 /* Empêche tout débordement horizontal */
@@ -463,6 +476,7 @@ header, .navbar, .nav-links.active {
   position: relative;
   z-index: 9999 !important;
 }
+
 
 
 
