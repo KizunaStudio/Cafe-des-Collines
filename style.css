@@ -312,172 +312,74 @@ footer {
   font-size: 0.9rem;
 }
 
-/* === FIX RESPONSIVE DÉFINITIF — CAFÉ DES COLLINES === */
-
-
-/* === MENU MOBILE === */
-/* === MENU MOBILE FIX === */
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute; /* en dehors du flux de la navbar */
-  top: 100%; /* commence juste en dessous de la navbar */
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  text-align: center;
-  padding: 1.5rem 0;
-  transition: all 0.3s ease-in-out;
-  z-index: 9999; /* passe au-dessus du contenu */
-}
-
-.nav-links.active {
-  display: flex;
-  animation: slideDown 0.4s ease forwards;
-}
-
-/* animation d’ouverture fluide */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-links a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding: 0.8rem 0;
-}
-
-.burger {
-  z-index: 10000; /* le burger reste cliquable par-dessus */
-}
-
-
-
-/* Empêche tout débordement horizontal */
-.cafes, .coffee-list, .coffee-item, .coffee-text {
-overflow-x: hidden;
-width: 100%;
-max-width: 100%;
-margin: 0 auto;
-}
-
-
-/* Corrige les images trop larges */
-.coffee-item img {
-width: 100%;
-max-width: 340px;
-height: auto;
-display: block;
-margin: 0 auto;
-border-radius: 10px;
-box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-
-/* Ajuste le texte sur mobile */
-.coffee-text h3 {
-font-size: clamp(1.2rem, 4vw, 1.5rem);
-text-align: center;
-word-wrap: break-word;
-overflow-wrap: break-word;
-}
-
-
-.coffee-text p {
-font-size: clamp(0.9rem, 3vw, 1rem);
-text-align: center;
-padding: 0 1rem;
-line-height: 1.5;
-}
-
-
-/* Pour éviter tout débordement du conteneur */
-section, div, header, footer {
-max-width: 100%;
-overflow-x: hidden;
+/* === RESPONSIVE COMPLET — CAFÉ DES COLLINES === */
+.atelier-text {
+max-width: 600px;
+padding: 4rem;
 }
 
 
 @media (max-width: 768px) {
-  .coffee-item {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .coffee-text {
-    padding: 0 1rem;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
-
-/* === CORRECTION FINALE DU MENU HAMBURGER === */
-@media (max-width: 900px) {
-  .navbar {
-    position: relative; /* permet au menu de se placer par-dessus */
-    z-index: 1000;
-  }
-
-  .burger {
-    display: block !important;
-    position: absolute;
-    right: 1.5rem;
-    top: 1.2rem;
-    z-index: 1100;
-    font-size: 2rem;
-    color: var(--cuivre);
-    cursor: pointer;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.95);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.4s ease;
-  }
-
-  .nav-links.active {
-    max-height: 400px;
-    opacity: 1;
-    padding: 1.5rem 0;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-  }
-
-  .nav-links a {
-    font-size: 1.1rem;
-  }
-}
-
-/* === FIX : menu hamburger visible au-dessus du hero === */
-header, .navbar, .nav-links.active {
-  position: relative;
-  z-index: 9999 !important;
+.atelier-text {
+padding: 2rem;
+text-align: center;
 }
 
 
+.atelier-image img {
+max-width: 100%;
+padding: 0;
+}
+}
+
+
+/* === GALERIE === */
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+}
+
+
+.gallery-grid img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 8px;
+transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+
+.gallery-grid img:hover {
+transform: scale(1.05);
+}
+
+
+/* === CONTACT === */
+.contact form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+max-width: 450px;
+margin: 0 auto;
+}
+
+
+@media (max-width: 600px) {
+.contact form {
+width: 90%;
+}
+}
+
+
+/* === FOOTER === */
+footer {
+background-color: #0e0704;
+color: var(--texte-clair);
+text-align: center;
+padding: 1rem;
+font-size: 0.9rem;
+}
 
 
 
