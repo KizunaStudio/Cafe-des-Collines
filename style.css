@@ -387,28 +387,10 @@ max-width: 90%;
 margin: 0 auto;
 }
 
- /* === FIX FINAL DU MENU HAMBURGER === */
+/* === FIX DÉFINITIF DU MENU HAMBURGER (100% FONCTIONNEL) === */
 @media (max-width: 900px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
-    height: auto;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-
-  /* Quand on clique sur le burger */
-  .nav-links.active {
-    display: flex;
-    max-height: 400px; /* le menu se déroule */
+  .navbar {
+    flex-wrap: wrap;
   }
 
   .burger {
@@ -416,17 +398,43 @@ margin: 0 auto;
     position: absolute;
     right: 1.5rem;
     top: 1.2rem;
-    z-index: 9999;
+    z-index: 1001;
     font-size: 2rem;
     color: var(--cuivre);
     cursor: pointer;
   }
 
-  /* on masque la nav normale */
-  .navbar ul {
-    transition: all 0.4s ease;
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Plus grand pour s’ouvrir complètement */
+    opacity: 1;
+    padding: 1.5rem 0;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
   }
 }
+
 
 
 
